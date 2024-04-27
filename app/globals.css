@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -8,7 +8,21 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer utilities {
+  .bg-navy-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(56, 136, 213, var(--tw-bg-opacity)); /* Navy blue color */
+  }
+}
+
+/*
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -31,3 +45,32 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* Input field styling 
+.input-field {
+  /* Customize border, padding, font size, etc. 
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  font-size: 14px;
+}
+
+
+/* Checkbox label styling 
+.checkbox-label {
+  /* Customize font size, margin, etc. 
+  font-size: 14px;
+  margin-right: 0.5rem;
+}
+
+
+/* Submit button styling 
+.submit-button {
+  /* Customize background color, text color, padding, etc. 
+  background-color: #001f3f;  
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+*/
