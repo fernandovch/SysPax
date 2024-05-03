@@ -35,9 +35,6 @@ const PatientForm = () => {
     patientId: ''
   });
 
-
-
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -91,54 +88,29 @@ const PatientForm = () => {
     input.value = formattedValue;
   }
 
-  // function callValidateInput(event: InputEvent )
-  // {
-  //   const input: HTMLInputElement = event.target;
-  //   validateInput( input);
-  // }
-
-  // function validateInput( input :HTMLInputElement ): void {
-    
-  //   if (input.validity.valueMissing) {
-  //     // Set custom message for the required field
-  //     input.setCustomValidity('Ingresar el data requerido.');
-  //   } else {
-  //     // Clear custom message
-  //     input.setCustomValidity('');
-  //   }
-  // }
-
-
-
   return (
     <>
       <Script
   id="show-banner" 
   dangerouslySetInnerHTML={{
-    __html:
-  
+    __html:  
   `   
-
-  function validateInput(input) {
-    if (input.validity.valueMissing) {
-      // Set custom message for the required field
-      input.setCustomValidity('Ingresar el dato requerido.');
-    } else {
-      // Clear custom message
-      input.setCustomValidity('');
+    function validateInput(input) {
+      if (input.validity.valueMissing) {
+        // Set custom message for the required field
+        input.setCustomValidity('Ingresar el dato requerido.');
+      } else {
+        // Clear custom message
+        input.setCustomValidity('');
+      }
     }
-  }
 
-  const inputElement = document.querySelectorAll('input[type="text"]');
-  inputElement.forEach((i)=>{
-    i.addEventListener('invalid', function() {
-    validateInput(i);
-    })
-  })
-  
-
-
-    
+    const inputElement = document.querySelectorAll('input[type="text"]');
+    inputElement.forEach((i)=>{
+      i.addEventListener('invalid', function() {
+      validateInput(i);
+      })
+    })    
    ` }}
     
    />
